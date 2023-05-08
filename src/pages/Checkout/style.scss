@@ -1,0 +1,30 @@
+.checkout {
+  display:  flex;
+  gap: 32px;
+
+  &__left {
+    max-width: 640px;
+  }
+
+  &__right {
+    max-width: 448px;
+
+  }
+
+  &__complet,
+  &__payment {
+    background-color: #F3F2F2;
+    padding: 40px;
+    border-radius: 6px;
+
+    + div {
+      margin-top: 12px;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+}

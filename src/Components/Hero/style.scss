@@ -1,0 +1,36 @@
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+
+  &__title {
+    font-family: 'Baloo 2';
+    font-size: 48px;
+    line-height: 62.4px;
+    font-weight: 800;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 26px;
+    color: #403937;
+    font-weight: 400;
+  }
+
+  &__intro {
+    max-width: 588px;
+    margin-block: 60px;
+  }
+
+  &__list {
+    color: #574F4D;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-height: 80px;
+    padding: 0;
+    list-style: none;
+    margin-top: 60px;
+  }
+}

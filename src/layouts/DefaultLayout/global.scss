@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin-inline: auto;
+}
+
+.title-h3 {
+  color: #403937;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20.8px;
+  margin: 0;
+}
+
+.paragrapy {
+  color: #574F4D;
+  font-size: 14px;
+  line-height: 18.2px;
+  font-weight: 400;
+  margin: 0;
+}

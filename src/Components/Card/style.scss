@@ -1,0 +1,98 @@
+.card {
+  background-color: #F3F2F2;
+  max-width: 256px;
+  border-radius: 6px 36px;
+  margin-top: 20px;
+  text-align: center;
+  padding-inline: 20px;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+
+  &__coffee-img {
+    margin-top: -20px;
+    width: auto;
+  }
+
+  &__tag {
+    background-color: #F1E9C9;
+    border-radius: 100px;
+    color: #C47F17;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 8px;
+    width: fit-content;
+    margin: 16px auto;
+  }
+
+  &__title {
+    color: #403937;
+    font-size: 20px;
+    font-family: 'Baloo 2';
+    font-weight: 700;
+    line-height: 26px;
+    margin: 0;
+  }
+
+  &__text {
+    color: #8D8686;
+    font-size: 14px;
+    line-height: 18.2px;
+  }
+
+  &__price {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+  }
+
+  &__value {
+    color: #574F4D;
+    font-size: 24px;
+    font-weight: 700;
+
+    &::before {
+      content: 'R$';
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__buttons {
+    background-color: #E6E5E5;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 18px;
+    gap: 6px;
+    align-items: center;
+
+      &--less,
+      &--plus{
+        color: #8047F8;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+      }
+  }
+
+  &__buy {
+    background-color: #4B2995;
+    border-radius: 6px;
+    border: none;
+    color: #E6E5E5;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: #8047F8;
+    }
+  }
+}

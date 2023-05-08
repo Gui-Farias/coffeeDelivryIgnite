@@ -1,13 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {App} from './App.tsx'
-import './global.scss'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <div className="container">
-      <App />
-
-    </div>
+    <App />
   </React.StrictMode>,
 )

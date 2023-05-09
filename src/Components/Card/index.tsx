@@ -1,29 +1,33 @@
 import { useState } from 'react'
-import coffee01 from '../../assets/coffees/coffee01.png'
-import iconShoppingCartSimple from '../../assets/iconShoppingCartSimple.png'
-import './style.scss'
-import { Link } from 'react-router-dom'
 
-interface card {
+import { ShoppingCart } from '@phosphor-icons/react'
+import './style.scss'
+interface CardInterface {
   imgCoffee: string,
-  tags: [],
+  tags: string[],
   title: string,
   text: string,
   price: string,
 }
 
-export function Card() {
+export function Card(props:CardInterface) {
   const [qtdCoffee, setQtdCoffee] = useState(0)
 
   return (
-    <div className="card bg-red-500">
-      <img src={coffee01} alt=""  className='card__coffee-img'/>
-      <p className='card__tag'>Tradicional</p>
-      <h3 className='card__title'>Expresso Tradicional</h3>
-      <p className='card__text'>O tradicional café feito com água quente e grãos moídos</p>
+    <div className="card">
+      <img src={props.imgCoffee} alt=""  className='card__coffee-img'/>
+      <p className='card__tag'>
+         { props.tags.map(tag => {
+           return (
+            <span key={tag}>{tag}</span>
+           )
+          })}
+      </p>
+      <h3 className='card__title'>{props.title}</h3>
+      <p className='card__text'>{props.text}</p>
       <div className="card__price">
         <span className="card__value">
-          9,90
+          {props.price}
         </span>
         <div className="card__cart">
           <div className="card__buttons">
@@ -36,12 +40,9 @@ export function Card() {
             </button>
           </div>
 
-          <Link to={'/checkout'}>
-
-            <button className='card__buy'>
-              <img src={iconShoppingCartSimple} alt="" />
-            </button>
-          </Link>
+          <button className='card__buy'>
+            <ShoppingCart size={22} color='#FFF' weight='fill'/>
+          </button>
         </div>
       </div>
     </div>

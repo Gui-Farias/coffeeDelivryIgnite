@@ -1,0 +1,58 @@
+.success {
+  align-items: flex-end;
+  display: flex;
+  gap: 108px;
+  
+  .title {
+   color: #C47F17; 
+   font-family: 'Baloo 2';
+   font-weight: 800;
+   font-size: 32px;
+   line-height: 41.6px;
+  }
+
+  .paragrapy {
+    color: #403937;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+
+  &__box {
+    border: 1px solid #F00;
+    border-radius: 6px 36px;
+    padding: 40px;
+    margin-top: 40px;
+
+    p {
+      display: flex;
+      gap: 12px;
+      color: #574F4D;
+      margin: 0;
+
+      + p {
+        margin-top: 32px;
+      }
+
+      &:nth-child(1) span {
+        background-color: #8047F8;
+      }
+      &:nth-child(2) span {
+        background-color: #DBAC2C;
+      }
+      &:nth-child(3) span {
+        background-color: #C47F17;
+      }
+    }
+
+    span {
+      padding: 8px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      
+    }
+  }
+}

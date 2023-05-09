@@ -2,4 +2,30 @@
   display: flex;
   justify-content: space-between;
   padding-block: 32px;
+
+  &__options {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__location {
+    background-color: #EBE5F9;
+    border-radius: 6px;
+    color: #4B2995;
+    font-size: 14px;
+    line-height: 18.2px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+  }
+  
+  &__btn-cart {
+    aspect-ratio: 1;
+    background-color: #F1E9C9;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 11px;
+    display: flex;
+  }
 }

@@ -1,11 +1,10 @@
-import { useState } from 'react'
 
 import { MapPinLine, CurrencyDollar } from '@phosphor-icons/react'
 import { FormCheckout } from "../../Components/FormCheckout";
 import './style.scss'
+import { CoffeeOrder } from '../../Components/CoffeeOrder';
 
 export function Checkout() {
-  const [qtdCoffee, setQtdCoffee] = useState(0);
 
   return (
     <section className="checkout">
@@ -34,38 +33,18 @@ export function Checkout() {
             </div>
           </div>
 
+          <div className="checkout__options">
+             <button className="checkout__option checkout__option-credit active">Cartão de crédito</button>
+             <button className="checkout__option checkout__option-debito">Cartão de débito</button>
+             <button className="checkout__option checkout__option-dinheiro">Cartão de dinheiro</button>
+          </div>
         </div>
       </div>
 
       <div className="checkout__right">
         <h2>Cafés selecionados</h2>
-        <div className="coffee">
-          <div className="coffee__order">
-            <img src="https://via.placeholder.com/200x200.png" alt="" />
-            <div className="coffee__order__intro">
-              <h3 className="title-h3">Latte</h3>
-          
-            <div className="card__buttons">
-              <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee - 1)} className='card__buttons--less'>
-              -
-            </button>
-              {qtdCoffee}
-            <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee + 1)} className='card__buttons--plus'>
-              +
-            </button>
-          </div>
-            </div>
-          </div>
 
-          <div className="coffee__price">
-            <p>Total de intens <span>R$29,70</span></p>
-            <p>Entrega <span>R$9,00</span></p>
-            <p>Total <span>R$38,70</span></p>
-          </div>
-        </div>
-        <button>
-          Confirmar pedido
-        </button>
+        <CoffeeOrder />
       </div>
     </section>
   )

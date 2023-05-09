@@ -1,0 +1,89 @@
+.coffee{
+  background-color: #F3F2F2;
+  border-radius: 6px 44px;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 448px;
+
+  &__order {
+    align-items: flex-start;
+    border-bottom: 1px solid #E6E5E5;
+    display: flex;
+    gap: 20px;
+    padding-bottom: 24px;
+    justify-content: space-between;
+
+    &__intro {
+      flex: 1;
+    }
+
+    img {
+      aspect-ratio: 1;
+      width: 64px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__btn-trash {
+    align-items: center;
+    background-color: #E6E5E5;
+    border: none;
+    border-radius: 6px;
+    color: #574F4D;
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    font-size: 12px;
+    line-height: 19.2px;
+    padding: 8px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    margin-block: 24px;
+
+    p {
+      color: #574F4D;
+      display: flex;
+      font-size: 14px;
+      justify-content: space-between;
+      line-height: 18.2px;
+
+      &:last-child {
+        color: #403937;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+
+        span {
+          color: inherit;
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+
+      span {
+        font-size: 16px;
+        line-height: 20.8px;
+      }
+    }
+  }
+
+  &__btn {
+    background-color: #DBAC2C;
+    border: none;
+    border-radius: 6px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22.4px;
+    padding: 12px;
+    text-transform: uppercase;
+    width: 100%;
+  }
+}

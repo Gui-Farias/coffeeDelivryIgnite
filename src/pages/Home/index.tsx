@@ -12,10 +12,10 @@ export function Home() {
   return (
     <>
     <Hero />
-    <section>
-      <h2>Nossos Cafés</h2>
+    <section className="our-coffee">
+      <h2 className="our-coffee__title">Nossos Cafés</h2>
 
-      <div className="coffee-list">
+      <div className="our-coffee__list">
         {
           coffeeList.map((coffee) => {
             return (

@@ -1,6 +1,17 @@
-.coffee-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  margin-top: 32px;
+.our-coffee {
+  margin-top: 64px;
+
+  &__title {
+    font-family: 'Baloo 2';
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41.6px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 32px;
+  }
 }

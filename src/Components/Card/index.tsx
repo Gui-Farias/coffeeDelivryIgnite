@@ -13,6 +13,11 @@ interface CardInterface {
 export function Card(props:CardInterface) {
   const [qtdCoffee, setQtdCoffee] = useState(0)
 
+  function handleNewOrder() {
+    console.log(qtdCoffee, props, qtdCoffee * +props.price);
+    
+  }
+
   return (
     <div className="card">
       <img src={props.imgCoffee} alt=""  className='card__coffee-img'/>
@@ -40,7 +45,7 @@ export function Card(props:CardInterface) {
             </button>
           </div>
 
-          <button className='card__buy'>
+          <button className='card__buy' onClick={handleNewOrder}>
             <ShoppingCart size={22} color='#FFF' weight='fill'/>
           </button>
         </div>

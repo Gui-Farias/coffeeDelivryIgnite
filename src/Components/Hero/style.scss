@@ -8,6 +8,7 @@
     font-size: 48px;
     line-height: 62.4px;
     font-weight: 800;
+    margin: 0;
   }
 
   &__subtitle {
@@ -24,13 +25,41 @@
 
   &__list {
     color: #574F4D;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-height: 80px;
     padding: 0;
-    list-style: none;
     margin-top: 60px;
+    column-count: 2;
+  }
+
+  &__item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    svg {
+      padding: 8px;
+      position: relative;
+      border-radius: 100%;
+    }
+
+    &:nth-child(1) svg {
+      background-color: #C47F17;
+    }
+    &:nth-child(2) { 
+      margin-top: 15px;
+      svg {
+        background-color: #DBAC2C;
+      }
+    }
+    &:nth-child(3) svg {
+      background-color: #574F4D;
+      margin-left: -25px;
+    }
+    &:nth-child(4) {
+      margin-top: 15px;
+      svg {
+        background-color: #8047F8;
+        margin-left: -25px;
+      }
+    }
   }
 }

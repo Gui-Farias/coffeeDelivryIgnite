@@ -5,15 +5,26 @@ import coffee01 from '../../assets/coffees/coffee01.png'
 import './styles.scss'
 import { Link } from 'react-router-dom';
 
-export function CoffeeOrder() {
-  const [qtdCoffee, setQtdCoffee] = useState(0);
+interface CoffeeOrderInterface {
+  imgCoffee: string,
+  title: string,
+  price: string,
+  qtdCoffee: number
+}
+
+export function CoffeeOrder(props:CoffeeOrderInterface) {
+  const [qtdCoffee, setQtdCoffee] = useState(props.qtdCoffee | 0);
+
+  const [listOfCoffee, setListOfCoffee] = useState([{}]);
+  console.log(listOfCoffee);
+  
 
   return (
     <div className="coffee">
       <div className="coffee__order">
-        <img src={coffee01} alt="" />
+        <img src={props.imgCoffee} alt="" />
         <div className="coffee__order__intro">
-          <h3 className="title-h3">Latte</h3>
+          <h3 className="title-h3">{props.title}</h3>
           <div className="coffee__buttons">
             <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee - 1)} className='card__buttons--less'>
               -
@@ -28,7 +39,7 @@ export function CoffeeOrder() {
             </button>
           </div>
         </div>
-        <p>R$ 9.90</p>
+        <p>R${props.price}</p>
       </div>
 
       <div className="coffee__price">

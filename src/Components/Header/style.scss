@@ -1,7 +1,25 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  background-color: #FFF;
   padding-block: 32px;
+  position: relative;
+  z-index: 101010;
+
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: topDown 0.4s ease-in-out;
+  }
+
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1120px;
+    margin-inline: auto;
+  }
 
   &__options {
     display: flex;
@@ -27,5 +45,14 @@
     cursor: pointer;
     padding: 11px;
     display: flex;
+  }
+}
+
+@keyframes topDown {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
   }
 }

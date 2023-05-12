@@ -37,5 +37,9 @@
     &#uf {
       width: 60px;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }

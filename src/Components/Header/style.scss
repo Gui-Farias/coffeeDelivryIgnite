@@ -45,6 +45,26 @@
     cursor: pointer;
     padding: 11px;
     display: flex;
+    position: relative;
+  }
+
+  &__btn-span {
+    align-items: center;
+    aspect-ratio: 1;
+    background-color: #C47F17;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: #FFF;
+    display: flex;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 0;
+    padding: 4px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    justify-content: center;
+    width: 20px;
   }
 }
 

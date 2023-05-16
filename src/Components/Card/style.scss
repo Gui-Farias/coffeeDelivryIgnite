@@ -77,24 +77,6 @@
     height: 100%;
   }
 
-  &__buttons {
-    background-color: #E6E5E5;
-    border-radius: 6px;
-    padding: 6px 10px;
-    font-size: 16px;
-    gap: 6px;
-    align-items: center;
-
-      &--less,
-      &--plus{
-        color: #8047F8;
-        cursor: pointer;
-        background-color: transparent;
-        border: none;
-        font-size: 20px;
-      }
-  }
-
   &__buy {
     background-color: #4B2995;
     border-radius: 6px;
@@ -108,5 +90,24 @@
     &:hover {
       background-color: #8047F8;
     }
+  }
+}
+
+
+.input__buttons {
+  background-color: #E6E5E5;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 16px;
+  gap: 6px;
+  align-items: center;
+
+  &--less,
+  &--plus{
+    color: #8047F8;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
   }
 }

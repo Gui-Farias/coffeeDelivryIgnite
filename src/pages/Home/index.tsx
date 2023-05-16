@@ -25,6 +25,7 @@ export function Home() {
                 tags={coffee.tags}
                 text={coffee.text}
                 title={coffee.title}
+                qtd={coffee.qtd}
                 key={coffee.title}
               />
             )

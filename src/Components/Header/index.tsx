@@ -44,7 +44,7 @@ export function Header() {
           <Link to={'/checkout'}>
             <button className='header__btn-cart'>
               <ShoppingCart size={22} color='#C47F17' weight="fill" />
-              <span>{qtdCoffeeOrder}</span>
+              <span className='header__btn-span'>{qtdCoffeeOrder}</span>
             </button>
           </Link>
         </div>

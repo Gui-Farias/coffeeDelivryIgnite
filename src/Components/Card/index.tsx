@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { OrderContext } from '../../context/OrderContext'
 
 import { ShoppingCart } from '@phosphor-icons/react'
 import './style.scss'
@@ -8,14 +9,49 @@ interface CardInterface {
   title: string,
   text: string,
   price: string,
+  qtd: number
+}
+
+interface CoffeeOrder {
+  imgCoffee: string,
+  title: string,
+  price: string,
+  qtd: number
 }
 
 export function Card(props:CardInterface) {
+  const { setCoffeeList, coffeeList } = useContext(OrderContext)
+
   const [qtdCoffee, setQtdCoffee] = useState(0)
+  
 
   function handleNewOrder() {
-    console.log(qtdCoffee, props, qtdCoffee * +props.price);
-    
+    const newCoffeeOrder:CoffeeOrder = {
+      imgCoffee: props.imgCoffee,
+      price: props.price,
+      qtd: qtdCoffee,
+      title: props.title
+    }
+
+    const addCoffe = () =>  {
+      (!!coffeeList && newCoffeeOrder.qtd !== 0) && setCoffeeList([newCoffeeOrder])
+
+      const coffeeNewQtd = coffeeList.find((coffee) => coffee.title === newCoffeeOrder.title)
+      
+      if (!coffeeNewQtd) {
+        newCoffeeOrder.qtd > 0 && setCoffeeList([...coffeeList, newCoffeeOrder])
+      } else {
+        newCoffeeOrder.qtd === 0 ?
+          setCoffeeList(
+            coffeeList.filter(
+              coffee => coffee.title !== newCoffeeOrder.title
+            )
+          ) 
+          : setCoffeeList(coffeeList), coffeeNewQtd.qtd = newCoffeeOrder.qtd
+      }
+      setQtdCoffee(newCoffeeOrder.qtd)
+    }
+    addCoffe()
   }
 
   return (
@@ -35,12 +71,12 @@ export function Card(props:CardInterface) {
           {props.price}
         </span>
         <div className="card__cart">
-          <div className="card__buttons">
-            <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee - 1)} className='card__buttons--less'>
+          <div className="card__buttons input__buttons">
+            <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee - 1)} className='input__buttons--less'>
               -
             </button>
               {qtdCoffee}
-            <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee + 1)} className='card__buttons--plus'>
+            <button onClick={() => setQtdCoffee((qtdCoffee) => qtdCoffee + 1)} className='input__buttons--plus'>
               +
             </button>
           </div>

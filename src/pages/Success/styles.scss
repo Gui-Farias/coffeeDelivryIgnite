@@ -2,12 +2,14 @@
   align-items: flex-end;
   display: flex;
   gap: 108px;
+  margin-top: 60px;
   
   .title {
    color: #C47F17; 
    font-family: 'Baloo 2';
    font-weight: 800;
    font-size: 32px;
+   margin: 0;
    line-height: 41.6px;
   }
 
@@ -19,10 +21,14 @@
   }
 
   &__box {
-    border: 1px solid #F00;
+    border: 1px solid transparent;
     border-radius: 6px 36px;
     padding: 40px;
     margin-top: 40px;
+    background: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(to right, #DBAC2C, #8047F8) border-box;
+
 
     p {
       display: flex;

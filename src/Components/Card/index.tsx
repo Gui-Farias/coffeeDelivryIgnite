@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { OrderContext } from '../../context/OrderContext'
 
 import { ShoppingCart } from '@phosphor-icons/react'
@@ -23,7 +23,7 @@ export function Card(props:CardInterface) {
   const { setCoffeeList, coffeeList } = useContext(OrderContext)
 
   const [qtdCoffee, setQtdCoffee] = useState(0)
-  
+
 
   function handleNewOrder() {
     const newCoffeeOrder:CoffeeOrder = {

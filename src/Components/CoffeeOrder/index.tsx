@@ -12,7 +12,7 @@ interface CoffeeOrderInterface {
 }
 
 export function CoffeeOrder() {
-  const {coffeeList} = useContext(OrderContext)
+  const {coffeeList, deleteCoffee, lessCoffee, moreCoffee} = useContext(OrderContext)
 
   const formattedNumberToReal = (number:number) => { 
     return (number.toLocaleString('pt-BR', {
@@ -22,11 +22,17 @@ export function CoffeeOrder() {
     maximumFractionDigits: 2,
   }))};
 
-
-  function handleDeleteCoffee(coffee) {
-    console.log(coffee, 'áaa');
+  function handleDeleteCoffee() {
+    deleteCoffee(event?.target.dataset.title)
   }
 
+  function handleLessCoffe() {
+    lessCoffee(event?.target.dataset.title)
+  }
+
+  function handleMoreCoffe(){
+    moreCoffee(event?.target.dataset.title)
+  }
 
   return (
     <div className="coffee">
@@ -38,16 +44,16 @@ export function CoffeeOrder() {
               <div className="coffee__order__intro">
                 <h3 className="title-h3">{coffee.title}</h3>
                 <div className="coffee__buttons">
-                <div className="input__buttons">
-                  <button onClick={() => coffee.qtd - 1}  className='input__buttons--less'>
-                    -
-                  </button>
-                    {coffee.qtd}
-                  <button onClick={() => coffee.qtd + 1}  className='input__buttons--plus'>
-                    +
-                  </button>
-                </div>
-                  <button className='coffee__btn-trash' onClick={handleDeleteCoffee}>
+                  <div className="input__buttons">
+                    <button onClick={handleLessCoffe} data-title={coffee.title} className='input__buttons--less'>
+                      -
+                    </button>
+                      {coffee.qtd}
+                    <button onClick={handleMoreCoffe} data-title={coffee.title} className='input__buttons--plus'>
+                      +
+                    </button>
+                  </div>
+                  <button className='coffee__btn-trash' onClick={handleDeleteCoffee} data-title={coffee.title}>
                     <Trash size={16} color='#8047F8'/>
                     Remover
                   </button>

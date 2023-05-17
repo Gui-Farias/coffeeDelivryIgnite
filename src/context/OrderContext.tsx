@@ -10,7 +10,7 @@ interface CoffeeOrderInterface {
   imgCoffee: string,
   title: string,
   price: string,
-  qtdCoffee: number
+  qtd: number
 }
 
 export function OrderContextProvider({ children, } : CyclesContextProviderProps ) {
@@ -23,10 +23,38 @@ export function OrderContextProvider({ children, } : CyclesContextProviderProps 
     coffeeList.forEach(coffee => {
       setQtdCoffeeOrder(state => state + +coffee.qtd)
     });
+
+
   },[coffeeList])
 
+
+  function deleteCoffee(coffeeToDelete:string) {
+    const coffeeListAfterDeleteOne = coffeeList.filter(coffee => {
+      return coffee.title !== coffeeToDelete;
+    })
+    setCoffeeList(coffeeListAfterDeleteOne)
+  }
+
+  function lessCoffee(coffeeLess:string, coffeeQtd:number){
+    console.log(coffeeQtd);
+    
+    const coffeeNewQtd = coffeeList.find((coffee) => coffee.title === coffeeLess);
+
+    coffeeNewQtd?.qtd === 0 ?
+      setCoffeeList(
+        coffeeList.filter(
+          coffee => coffee.title !== newCoffeeOrder.title
+        )
+      ) 
+      : setCoffeeList(coffeeList), coffeeNewQtd.qtd = coffeeLess.qtd
+  }
+
+  function moreCoffee(coffee:string) {
+    console.log(coffee);
+  }
+
   return (
-    <OrderContext.Provider value={{qtdCoffeeOrder,setQtdCoffeeOrder,coffeeList, setCoffeeList}}>
+    <OrderContext.Provider value={{qtdCoffeeOrder,setQtdCoffeeOrder,coffeeList, setCoffeeList, deleteCoffee, lessCoffee, moreCoffee}}>
       {children}
     </OrderContext.Provider>
   )
